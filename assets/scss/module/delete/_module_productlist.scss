@@ -1,0 +1,74 @@
+
+$_blockName: 'productlist';
+
+$_productlistImgWidth: 260px;
+
+@include block($_blockName) {
+	width: 100%;
+	@include clearfix();
+	@include e(item) {
+		@include clearfix();
+		width: 100%;
+		border-bottom: 1px solid $color_grey;
+		padding-bottom: 40px;
+		&:only-child {
+			//border-bottom: 0;
+			//padding-bottom: 0;
+		}
+		@include e(item, "& +") {
+			margin-top: 20px;
+		}
+		@include m(switched) {
+			@include e(item__img) {
+				float: right;
+				color: findme;
+			}
+			@include e(item__content) {
+				padding-right: 20px;
+				padding-left: 0;
+			}
+		}
+		@include e(item__img) {
+			@include clearfix();
+			width: $_productlistImgWidth;
+			overflow: hidden;
+			text-align: center;
+			float: left;
+			img {
+				display: block;
+				margin: 0;
+				&[data-ng-click],
+				&[ng-click] {
+					cursor: pointer;
+				}
+			}
+		}
+		@include e(item__content) {
+			overflow: hidden;
+			padding-left: 20px;
+			h1 {
+
+			}
+			h2 {
+				@include e(item__headline, "&") {
+					@include fontSize(theta);
+				}
+			}
+			p {
+
+			}
+			ul {
+				@include ulNav();
+				li {
+					float: left;
+					width: 50%;
+					margin-bottom: 7px;
+					a {
+						display: block;
+					}
+				}
+			}
+
+		}
+	}
+}

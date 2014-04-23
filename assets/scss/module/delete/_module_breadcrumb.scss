@@ -1,0 +1,40 @@
+
+$_blockName: 'breadcrumb';
+
+
+@include block($_blockName) {
+	margin-bottom: 10px;
+	&,
+	ul {
+		@include clearfix();
+		display: block;
+		padding: 0;
+		margin-top: 0;
+		list-style: none;
+	}
+	@include e(item seperator) {
+		@include fontSize(delta);
+		color: $color_darkgrey;
+		display: block;
+		float: left;
+		margin: 0;
+		padding: 0;
+		margin-right: 5px;
+		font-family: $font_arial;
+	}
+	@include e(item) {
+		@include fontSize(delta);
+		color: $color_darkgrey;
+		a {
+			display: block;
+			font-size: inherit;
+			color: inherit;
+			&:hover {
+				color: $color_geramontRed;
+			}
+		}
+	}
+	@include e(seperator) {
+
+	}
+}

@@ -1,0 +1,76 @@
+
+$_blockName: 'product';
+
+$_productMainImageWidth: 70%;
+$_productContentWidth: 75%;
+$_productNutrientOffsetTop: -50px;
+
+@include block($_blockName) {
+	@include clearfix();
+	width: 100%;
+	margin-bottom: 50px;
+	@include e(image) {
+		@include clearfix();
+		width: $_productMainImageWidth;
+		overflow: hidden;
+		float: left;
+		margin-bottom: 20px;
+		img {
+			display: block;
+		}
+	}
+	@include e(addImage) {
+		width: 100% - $_productMainImageWidth;
+		overflow: hidden;
+		margin-bottom: 20px;
+		img {
+			display: block;
+		}
+	}
+	@include e(content) {
+		width: 100%;
+		position: relative;
+		min-height: image-height("img/products-nutritional.png") + $_productNutrientOffsetTop;
+	}
+	@include e(innerContent) {
+		width: $_productContentWidth;
+		padding-right: 120px;
+	}
+	@include e(headline) {
+		border-bottom: 1px solid $color_grey;
+		width: $_productContentWidth;
+		padding-bottom: 5px;
+	}
+	@include e(headline, "h1") {
+		@include fontSize(theta);
+		margin-bottom: 15px;
+	}
+	@include e(nutrient) {
+		@include fontSize(gamma, 1.3);
+		width: 100% - $_productContentWidth;
+		position: absolute;
+		right: 0;
+		padding: 100px 50px 0px 50px;
+		top: $_productNutrientOffsetTop;
+		background-image: url("/img/products-nutritional.png");
+		min-height: image-height("img/products-nutritional.png");
+		min-width: image-width("img/products-nutritional.png");
+		p {
+			font-size: inherit !important;
+			display: block;
+			width: 100%;
+			clear: both;
+			margin-bottom: 15px;
+		}
+		strong {
+		}
+		ul {
+			@include ulNav();
+			li {
+				width: 100%;
+				clear: both;
+				margin-bottom: 3px;
+			}
+		}
+	}
+}

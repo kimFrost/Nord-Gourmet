@@ -1,0 +1,16 @@
+
+$_blockName: 'seperator';
+
+@include block($_blockName) {
+	width: 100%;
+	margin-bottom: 20px;
+	background-image: url("/img/teaser_separator.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: image-height("img/teaser_separator.png");
+	@include m(line) {
+		height: 1px;
+		background-image: none;
+		border-bottom: 1px solid $color_lightgrey;
+	}
+}

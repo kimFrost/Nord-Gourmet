@@ -1,0 +1,18 @@
+
+$_blockName: 'time';
+
+@include block($_blockName) {
+	position: relative;
+	display: inline-block;
+	margin-right: -0.25em;
+	padding-left: image-width("img/recipe-time.png") + 5px;
+	min-height: image-height("img/recipe-time.png");
+	line-height: image-height("img/recipe-time.png");
+	background-image: url("/img/recipe-time.png");
+	background-repeat: no-repeat;
+	background-position: left center;
+	margin-left: 8px; // difficulty module spacing // UGLY
+	@include e(unit) {
+
+	}
+}

@@ -1,0 +1,13 @@
+
+$_blockName: 'shadow';
+
+@include block($_blockName) {
+	width: auto;
+	position: relative;
+	display: inline-block;
+	background-image: url("/img/block_bottom_shadow.png");
+	background-size: 100% 14px;
+	padding-bottom: 14px;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}

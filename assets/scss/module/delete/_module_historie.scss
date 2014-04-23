@@ -1,0 +1,115 @@
+
+$_blockName: 'historie';
+
+@include block($_blockName) {
+	@include clearfix();
+	width: 100%;
+	background-image: url(/img/historie__timeline.png);
+	background-repeat: repeat-y;
+	padding-left: 30px;
+	@include e(line) {
+		width: 100%;
+		float: left;
+		clear: both;
+		margin-bottom: 20px;
+		@include m(1898) {
+			@include e(image) {
+				background-image: url(/img/timeline/bg-1898.jpg);
+				height: image-height("img/timeline/bg-1898.jpg");
+				width: image-width("img/timeline/bg-1898.jpg");
+			}
+			@include e(text) {
+				position: absolute;
+				top: 10px;
+				left: 452px;
+				right: 0;
+				bottom: 188px;
+				padding-right: 0;
+			}
+			@include e(year) {
+				margin-top: 40px;
+			}
+		}
+		@include m(1935) {
+			@include e(image) {
+				background-image: url(/img/timeline/bg-1935.jpg);
+				height: image-height("img/timeline/bg-1935.jpg");
+				width: image-width("img/timeline/bg-1935.jpg");
+			}
+			@include e(text) {
+				position: absolute;
+				top: 80px;
+				left: 420px;
+				right: 0;
+				bottom: 160px;
+				padding-right: 0;
+			}
+		}
+		@include m(1973) {
+			@include e(image) {
+				background-image: url(/img/timeline/bg-1973.jpg);
+				height: image-height("img/timeline/bg-1973.jpg");
+				width: image-width("img/timeline/bg-1973.jpg");
+			}
+			@include e(text) {
+				position: absolute;
+				top: 40px;
+				left: 284px;
+				right: 50px;
+				bottom: 25px;
+				padding-right: 0;
+			}
+			@include e(year) {
+				margin-top: 70px;
+			}
+		}
+		@include m(2001) {
+			@include e(image) {
+				background-image: url(/img/timeline/bg-2001.jpg);
+				height: image-height("img/timeline/bg-2001.jpg");
+				width: image-width("img/timeline/bg-2001.jpg");
+				float: left;
+			}
+			@include e(text) {
+				float: left;
+				width: 40%;
+				//position: absolute;
+				//top: 30px;
+				//left: 0px;
+				//right: 200px;
+				//bottom: 25px;
+				padding-left: 0;
+			}
+		}
+		@include m(2003) {
+			@include e(image) {
+
+			}
+			@include e(text) {
+				width: 60%;
+				padding: 5px;
+				padding-left: 0;
+			}
+		}
+	}
+	@include e(year) {
+		@include fontSize(kappa);
+		float: left;
+		font-family: $font_textileRegular;
+		color: $color_geramontRed;
+		padding-right: 30px;
+	}
+	@include e(content) {
+		overflow: hidden;
+		position: relative;
+		@include e(text) {
+			@include fontSize(gamma,1.5);
+			padding: 15px;
+		}
+		@include e(image) {
+			display: block;
+			background-repeat: no-repeat;
+			background-position: right top;
+		}
+	}
+}

@@ -1,0 +1,100 @@
+
+$_blockName: 'recipe';
+
+$_recipeContentLeftWidth: 60%;
+
+@include block($_blockName) {
+	@include clearfix();
+	@include e(header) {
+		position: relative;
+		display: block;
+		img {
+			display: block;
+			margin: 0;
+		}
+		border-bottom: 1px solid $color_grey;
+		margin-bottom: 40px;
+		padding-bottom: 5px;
+	}
+	@include e(header__spot) {
+		position: absolute;
+		display: block;
+		right: 10px;
+		bottom: -20px;
+		display: none; // hidden
+		img  {
+			display: block;
+			margin: 0;
+		}
+	}
+	@include e(content) {
+		color: $color_darkgrey;
+		p {
+			color: inherit;
+		}
+	}
+	@include e(content__head) {
+		@include clearfix();
+		width: 100%;
+	}
+	@include e(headline) {
+
+	}
+	@include e(content__body) {
+		@include clearfix();
+		width: 100%;
+	}
+	@include e(content__left) {
+		@include fontSize(gamma);
+		width: $_recipeContentLeftWidth;
+		float: left;
+		padding-right: 30px;
+		h1 {
+			@include fontSize(theta);
+		}
+		h2 {
+			@include fontSize(epsilon);
+			margin-bottom: 10px;
+		}
+		p {
+			font-size: inherit;
+		}
+	}
+	@include e(content__right) {
+		overflow: hidden;
+		padding-left: 30px;
+	}
+	@include e(content__nutrients) {
+		@include fontSize(gamma, 1.2);
+		border-left: 1px solid $color_lightgrey;
+		color: $color_darkgrey;
+		h3 {
+			@include fontSize(epsilon);
+			margin-bottom: 10px;
+		}
+		ul {
+			@include clearfix();
+			display: block;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			margin-bottom: 20px;
+			li {
+				font-size: inherit;
+				line-height: inherit;
+				display: block;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				clear: both;
+				color: inherit;
+				margin-bottom: 5px;
+				a {
+					display: block;
+					font-size: inherit;
+				}
+			}
+		}
+	}
+}

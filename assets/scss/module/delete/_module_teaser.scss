@@ -1,0 +1,58 @@
+
+$_blockName: 'teaser';
+
+@include block($_blockName) {
+	@include clearfix();
+	width: 100%;
+	@include m(search) {
+		ul {
+			li {
+				margin-bottom: 7px;
+			}
+		}
+		@include e(content) {
+			p {
+				margin-bottom: 3px;
+				color: $color_darkgrey
+			}
+		}
+		@include e(list) {
+			margin-bottom: 15px;
+		}
+	}
+	@include e(headline) {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	@include e(img) {
+		width: 100%;
+		margin-bottom: 10px;
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	@include e(content) {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	@include e(list) {
+		width: 100%;
+		margin: 0;
+		margin-bottom: 10px;
+		list-style: none;
+		padding: 0;
+		li {
+			display: block;
+			width: 100%;
+			margin: 6px 0 6px 0;
+			a {
+				display: block;
+			}
+		}
+		@include e(item) {
+			display: block;
+			width: 100%;
+		}
+	}
+}

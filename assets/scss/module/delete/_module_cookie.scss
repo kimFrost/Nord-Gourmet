@@ -1,0 +1,23 @@
+
+$_blockName: 'cookie';
+
+/*
+@include block($_blockName) {
+	@include containerArea();
+	position: relative;
+	display: block;
+	background-image: url("/img/texture/texture_cloth.png");
+	background-position: left top;
+	background-repeat: repeat;
+
+
+
+	overflow: hidden;
+	@include e(wrapper) {
+		@include contentArea();
+	}
+	ul {
+		@include ulNav();
+	}
+}
+*/

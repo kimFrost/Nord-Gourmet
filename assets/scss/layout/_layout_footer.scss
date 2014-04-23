@@ -1,0 +1,42 @@
+
+$_blockName: 'l__footer';
+
+@include block($_blockName) {
+	@include contentArea();
+	padding-top: 5px;
+	background-image: url("/img/texture/texture_cloth.png");
+	background-position: left top;
+	background-repeat: repeat-x;
+	z-index: 60;
+	@include e(content) {
+		@include onlyInDebug() {
+			background-color: lightblue;
+		}
+	}
+	@include m(ripped) {
+		@include containerArea();
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: -7px;
+			height: 14px;
+			width: 100%;
+			left: 0;
+			right: 0;
+			background-image: url("/img/header-torn-cloth-flipped.png");
+			background-repeat: repeat-x;
+			background-position: left bottom;
+		}
+		@include e(content) {
+			@include contentArea();
+		}
+	}
+	@include m(retract) {
+		min-height: 20px;
+		* {
+			display: none;
+			font-size: 0;
+		}
+	}
+}

@@ -1,0 +1,37 @@
+
+$_blockName: 'related';
+
+$_relatedItemWidth: 25%;
+$_relatedItemPadding: 20px;
+
+@include block($_blockName) {
+	@include clearfix();
+	width: 100%;
+	@include e(headline) {
+		width: 100%;
+		border-bottom: 1px solid $color_coal;
+		margin-bottom: 10px;
+	}
+	@include e(list) {
+		@include clearfix();
+		display: block;
+		padding: 0;
+		margin: 0;
+		margin-right: -$_relatedItemPadding;
+		margin-bottom: 10px;
+	}
+	@include e(item) {
+		display: block;
+		float: left;
+		width: $_relatedItemWidth;
+		padding-right: $_relatedItemPadding;
+		padding-bottom: $_relatedItemPadding;
+		overflow: hidden;
+		a {
+			display: block;
+		}
+		img {
+			display: block;
+		}
+	}
+}

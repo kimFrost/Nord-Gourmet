@@ -1,0 +1,50 @@
+
+$__blockName: 'container';
+$__gutterWidth: 20px;
+
+@include block($__blockName) {
+	width: 100%;
+	padding-right: $__gutterWidth;
+	padding-left: $__gutterWidth;
+	margin-bottom: 20px;
+	min-width: $contentWidth;
+	@include onlyInDebug() {
+		background-color: bisque;
+	}
+	&,* {
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
+	@include e(inner) {
+		position: relative;
+		width: 100%;
+		@include onlyInDebug() {
+			background-color: gold;
+		}
+	}
+	@include e(content) {
+		width: $contentWidth;
+		margin: 0 auto;
+		@include onlyInDebug() {
+			background-color: goldenrod;
+		}
+		@include m(full) {
+			width: 100%;
+		}
+		@include mediaQueries(tablet){
+			width: $contentWidth;
+		};
+		@include mediaQueries(mobile){
+			width: $contentWidth;
+		};
+	}
+	// Media Queries (container)
+	@include mediaQueries(tablet){
+		min-width: $contentWidth + $__gutterWidth;
+	};
+	@include mediaQueries(mobile){
+		min-width: $contentWidth + $__gutterWidth;
+	};
+}
+

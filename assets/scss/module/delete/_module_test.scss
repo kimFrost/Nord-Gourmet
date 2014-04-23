@@ -1,0 +1,62 @@
+
+
+
+$_blockName: 'test';
+
+
+/*CACTUSPILOT:OPEN*/
+
+/*MODULE:OPEN*//*
+#{$_blockName}
+*//*MODULE:CLOSE*/
+
+/*DESC:OPEN*//*
+This is a "#{$_blockName}" module.
+*//*DESC:CLOSE*/
+
+/*MARKUP:OPEN*//*
+<div class="#{$_blockName} $$modifiers">
+	<div class="#{$_blockName}__content ">Lorem ipsum</div>
+
+</div>
+*//*MARKUP:CLOSE*/
+
+/*CACTUSPILOT:CLOSE*/
+
+
+@include block($_blockName) {
+	width: 300px;
+	height: 100px;
+	padding: 10px;
+	background: red;
+	&:hover {
+		background-color: cornflowerblue;
+	}
+	&:active {
+		background-color: crimson;
+	}
+	@include m(blue) {
+		background-color: blue;
+	}
+	@include m(green) {
+		background-color: green;
+	}
+	@include e(content) {
+		margin: 10px;
+		color: #ccc;
+	}
+	@include m(purple) {
+		background-color: purple;
+		@include e(content) {
+			background-color: #000;
+			color: #fff;
+			&:before {
+				content: "";
+				display: block;
+				width: 10px;
+				height: 10px;
+				background: pink
+			}
+		}
+	}
+}

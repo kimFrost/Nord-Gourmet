@@ -1,0 +1,45 @@
+
+$_blockName: 'difficulty';
+
+$_difficultyNumOfDifficulties: 3;
+
+@include block($_blockName) {
+	position: relative;
+	display: inline-block;
+	margin-right: -0.25em;
+	min-height: image-height("img/skill_semi.png");
+	background-image: url("/img/skill_semi.png");
+	min-width: image-width("img/skill_semi.png") * $_difficultyNumOfDifficulties;
+	background-repeat: repeat-x;
+	top: 1px;
+	background-position: left center;
+	&:before {
+		content: "";
+		display: block;
+		height: image-height("img/skill_full.png");
+		background-image: url("/img/skill_full.png");
+		background-repeat: repeat-x;
+		background-position: left center;
+		position: absolute;
+		overflow: hidden;
+		left: 0;
+		top: 50%;
+		margin-top: - (image-height("img/skill_full.png") / 2);
+		width: image-width("img/skill_full.png") * 0;
+	}
+	@include m(d1) {
+		&:before {
+			width: image-width("img/skill_full.png") * 1;
+		}
+	}
+	@include m(d2) {
+		&:before {
+			width: image-width("img/skill_full.png") * 2;
+		}
+	}
+	@include m(d3) {
+		&:before {
+			width: image-width("img/skill_full.png") * 3;
+		}
+	}
+}

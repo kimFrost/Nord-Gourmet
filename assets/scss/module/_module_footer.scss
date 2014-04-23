@@ -1,0 +1,22 @@
+
+$_blockName: 'footer';
+
+@include block($_blockName) {
+	width: 100%;
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	@include e(left) {
+		margin-left: 20px;
+		float: left;
+		text-align: left;
+	}
+	@include e(right) {
+		margin-right: 20px;
+		float: right;
+		text-align: right;
+	}
+}
+

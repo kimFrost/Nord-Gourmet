@@ -1,0 +1,11 @@
+
+$_blockName: 'blocklist';
+
+@include block($_blockName) {
+	@include clearfix();
+	margin-bottom: 20px;
+	margin-right: -20px;
+	@include e(test) {
+		color: red;
+	}
+}

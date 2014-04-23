@@ -1,0 +1,196 @@
+
+$_blockName: 'brand';
+
+$_brandAsideWidth: 25%;
+
+@include block($_blockName) {
+	@include containerArea();
+	@include box-shadow(0px -5px 10px 0px rgba($color_black, 0.2));
+	@include fontSize(delta);
+	font-family: $font_arial;
+	background-color: $color_paper;
+	background-image: url("/img/texture/texture_cloth.png");
+	background-repeat: repeat;
+	background-position: left top;
+	overflow: hidden;
+	//min-height: 100%;
+	@include e(header) {
+		@include clearfix();
+		display: block;
+		width: 100%;
+		position: relative;
+		margin-bottom: 15px;
+	}
+	@include e(logo) {
+		display: block;
+		float: left;
+		background-repeat: no-repeat;
+		background-position: center center;
+		position: relative;
+	}
+	@include e(nav) {
+		overflow: hidden;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 208px;
+		padding-left: 35px;
+		ul {
+			@include clearfix();
+			@include ulNav();
+			li {
+				margin-left: 5px;
+				&:first-child {
+					margin-left: 0;
+				}
+				&:hover,
+				&.is-active {
+					a {
+						color: $color_white;
+						background-position: center center;
+						background-size: 100% 100%;
+						background-repeat: no-repeat;
+						&:after {
+							content: "";
+							display: block;
+							position: absolute;
+							right: 1%;
+							bottom: 1px;
+							background-repeat: no-repeat;
+						}
+					}
+				}
+				a {
+					@include fontSize(epsilon,1);
+					font-family: $font_ministerBold;
+					display: block;
+					cursor: pointer;
+					position: relative;
+					padding: 10px 15px 10px 10px;
+				}
+			}
+		}
+	}
+	@include e(content) {
+
+	}
+	@include e(productlist widgetlist) {
+		@include e(arrow, "ul") {
+			padding-left: image-width("img/arrow_geramont.png") + 10px !important;
+		}
+		@include e(arrow) {
+			position: relative;
+			padding-left: image-width("img/arrow_geramont.png") + 10px;
+			&:before {
+				display: block;
+				position: absolute;
+				content: "";
+				background-image: url("/img/arrow_geramont.png");
+				width: image-width("img/arrow_geramont.png");
+				min-height: image-height("img/arrow_geramont.png");
+				background-position: left center;
+				background-repeat: no-repeat;
+				left: 0;
+				top: 0;
+				bottom: 0;
+			}
+		}
+	}
+	@include e(widgetlist) {
+		h1 {
+			@include fontSize(epsilon);
+		}
+	}
+	@include e(splash) {
+		@include clearfix();
+		@include border-radius(5px, 5px, 5px, 5px);
+		@include box-shadow(3px 3px 7px 0px rgba($color_black, 0.3));
+		display: block;
+		margin-bottom: 20px;
+		width: 100%;
+		overflow: hidden;
+		img {
+			display: block;
+			margin: 0;
+		}
+	}
+	@include e(paper) {
+		@include border-radius(5px, 5px, 5px, 5px);
+		@include clearfix();
+		display: block;
+		background-color: $color_white;
+		margin-bottom: 20px;
+		overflow: hidden;
+		border: 1px solid #fff;
+		position: relative;
+		z-index: 1;
+		@include e(paperMain) {
+			display: block;
+			width: 100%;
+			//padding: 20px;
+			padding: 35px;
+			overflow: hidden;
+			&:before {
+				@include box-shadow(inset 0px 0px 25px 0px rgba($color_black, 0.2));
+				content: "";
+				display: block;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				left: 0;
+				z-index: -1;
+			}
+			@include e(headline, "h1") {
+				font-family: $font_ministerBook;
+			}
+		}
+		@include e(paperAside) {
+			display: block;
+			float: right;
+			width: $_brandAsideWidth;
+			//padding: 20px;
+			padding: 35px 20px;
+			&:before {
+				@include box-shadow(inset -10px 0px 25px 0px rgba($color_black, 0.2));
+				content: "";
+				display: block;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				left: 100% - $_brandAsideWidth;
+				z-index: -1;
+			}
+			@include e(paperMain, "& + ") {
+				width: 100% - $_brandAsideWidth;
+				&:before {
+					right: $_brandAsideWidth;
+				}
+			}
+			@include e(paperMain, "& ~ ") {
+				width: 10% - $_brandAsideWidth;
+				&:before {
+					right: $_brandAsideWidth;
+				}
+			}
+		}
+		@include e(paperHead) {
+			width: 100%;
+			overflow: hidden;
+		}
+	}
+	h1, h2, h3, h4 {
+		margin-bottom: 5px;
+	}
+	// Tests
+	& * {
+		&:before {
+			@if $showClasses {
+				@include fontSize(beta);
+				content: attr(class);
+				background-color: rgba($color_geramontRed, 0.2);
+			}
+		}
+	}
+}

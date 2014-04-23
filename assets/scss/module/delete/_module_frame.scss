@@ -1,0 +1,19 @@
+
+$_blockName: 'frame';
+
+$_relatedItemWidth: 25%;
+$_relatedItemPadding: 20px;
+
+@include block($_blockName) {
+	@include box-shadow(0px 5px 10px 0px rgba($color_black, 0.2));
+	width: 101%;
+	margin-left: -0.5%;
+	position: relative;
+	z-index: 50;
+	margin-bottom: -5px;
+	border: 10px solid $color_white;
+	img {
+		display: block;
+		width: 100%;
+	}
+}

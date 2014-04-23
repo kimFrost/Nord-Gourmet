@@ -1,0 +1,119 @@
+
+$_blockName: 'select';
+//$_select_height: 40px;
+$_select_height: 34px;
+
+
+
+@include block($_blockName) {
+	//@include fontSize(epsilon);
+	@include fontSize(gamma);
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	border: 1px solid $color_grey;
+	background-color: $color_sunsand;
+	color: $color_coal;
+	cursor: pointer;
+	margin: 0;
+	display: block;
+	padding: 0;
+	padding: 7px 9px;
+	font-family: Arial;
+	height: $_select_height;
+	font-style: italic;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	display: inline-block;
+	vertical-align: middle;
+	& {
+		line-height: normal;
+	}
+	&::-ms-expand {
+		display: none;
+	}
+	&:before {
+		content: "";
+		display: inline-block;
+		//height: $_select_height / 2 + $_select_height / 4;
+		height: 120%;
+		vertical-align: middle;
+	}
+	// Ie8 + ie9 dropdown arrow fix
+	//.ie8 & {
+		//padding-right: 0;
+	//}
+	//& { padding-right/*\**/: 6px\9 !important; }
+	@include m(toggle) {
+
+	}
+	@include m(button) {
+		@include border-radius(5px, 5px, 5px, 5px);
+		@include hoverActiveStates($color_geramontRed, "background-color");
+		color: $color_white;
+		border: 0;
+		text-align: center;
+		width: 50%;
+		margin: 0 auto;
+		display: block;
+	}
+	@include m(multi) {
+		background-image: url(/img/dropdown_arrow.png);
+		background-repeat: no-repeat;
+		background-position: 95% center;
+		//padding-right: 22px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	@include m(active) {
+		background-color: lighten($color_grey, 10%);
+		color: $color_geramontRed;
+	}
+	option {
+		color: $color_darkgrey;
+		height: $_select_height;
+		background-color: $color_white;
+		&[selected] {
+			background-color: $color_grey;
+			color: $color_geramontRed;
+		}
+	}
+	/*
+	@include e(selected) {
+		background-color: $color_sunsand;
+		margin: -8px -10px; // block padding + block border
+		padding: 7px 9px; // block padding
+		border: 1px solid $color_grey;
+	}
+	@include e(list) {
+		display: none;
+		position: absolute;
+		background-color: $color_white;
+		border-top: 1px solid $color_grey;
+		color: $color_coal;
+		width: 100%;
+		z-index: 1;
+		@include e(item) {
+			width: 100%;
+			border: 1px solid $color_grey;
+			background-color: $color_white;
+			&:hover {
+				background-color: lighten($color_grey, 10%);
+				cursor: pointer;
+			}
+			&.select_item--active {
+				background-color: lighten($color_grey, 20%);
+			}
+			@include m(active) {
+
+			}
+		}
+	}
+	@include m(active) {
+		@include e(item) {
+			display: block;
+		}
+	}
+	*/
+}

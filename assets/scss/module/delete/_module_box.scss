@@ -1,0 +1,63 @@
+
+$_blockName: 'box'; // can't call it block cause of constructor
+
+//$blocksBlockHeight: 220px + 20px;
+$blocksBlockHeight: 200px + 20px;
+$blocksBlockPerLine: 4;
+
+@include block($_blockName) {
+	@include clearfix();
+	position: relative;
+	display: block;
+	float: left;
+	width: 100% / $blocksBlockPerLine;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	height: $blocksBlockHeight;
+	z-index: 10;
+	@include onlyInDebug() {
+		background: #2e8b57;
+	}
+	@include e(inner) {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 100%;
+		@include onlyInDebug() {
+			background-color: red;
+		}
+	}
+	@include m("1x2") {
+		height: $blocksBlockHeight * 2;
+		float: right; // temp fix
+	}
+	@include m("1x3") {
+		height: $blocksBlockHeight * 3;
+		float: right; // temp fix
+	}
+	@include m("1x4") {
+		height: $blocksBlockHeight * 4;
+		float: right; // temp fix
+	}
+	@include m("2x1") {
+		width: 100% / $blocksBlockPerLine * 2;
+	}
+	@include m("3x1") {
+		width: 100% / $blocksBlockPerLine * 3;
+	}
+	@include m("4x1") {
+		width: 100% / $blocksBlockPerLine * 4;
+	}
+	@include m("2x2") {
+		width: 100% / $blocksBlockPerLine * 2;
+		height: $blocksBlockHeight * 2;
+	}
+	@include m("3x2") {
+		width: 100% / $blocksBlockPerLine * 3;
+		height: $blocksBlockHeight * 2;
+	}
+	@include m("4x2") {
+		width: 100% / $blocksBlockPerLine * 4;
+		height: $blocksBlockHeight * 2;
+	}
+}

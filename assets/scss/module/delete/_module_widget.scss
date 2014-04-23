@@ -1,0 +1,11 @@
+
+$_blockName: 'widget';
+
+@include block($_blockName) {
+	@include clearfix();
+	width: 100%;
+	display: block;
+	& + & {
+		margin-top: 10px;
+	}
+}

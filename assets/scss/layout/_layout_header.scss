@@ -1,0 +1,128 @@
+
+$_blockName: 'l__header';
+
+@include block($_blockName) {
+	@include contentArea();
+	padding-bottom: 5px;
+	background-image: url("/img/texture/texture_cloth.png");
+	background-position: left top;
+	//background-repeat: repeat-x;
+	background-repeat: repeat;
+	z-index: 60;
+	@include onlyInDebug() {
+		background-color: rgba(royalblue, 0.3);
+	};
+	@include e(content) {
+		@include onlyInDebug() {
+			background-color: lightblue;
+		}
+		@include e(logo) {
+			display: block;
+			float: left;
+			clear: both;
+			width: 155px;
+			height: 107px;
+			background-image: url("/img/logo.png");
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+		@include e(social) {
+			display: block;
+			float: right;
+			@include e(sociallinks) {
+
+			}
+			@include e(login) {
+
+			}
+		}
+		@include e(search) {
+			display: block;
+			float: right;
+			input {
+
+			}
+		}
+		@include e(nav) {
+			float: right;
+			border-bottom: 1px solid rgba($color_brown, 0.2);
+			ul {
+				@include clearfix();
+				@include ulNav();
+				float: left;
+				li {
+					padding: 5px 10px;
+					&:hover {
+						a {
+							color: $color_brown2;
+							font-family: $font_linotypeUniBold;
+						}
+					}
+					a {
+						@include fontSize(delta, 1);
+						cursor: pointer;
+						color: $color_black;
+						font-family: $font_linotypeUniCon;
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+	}
+	@include m(ripped) {
+		@include containerArea();
+		//display: none; // temp
+		//height: 7px; // temp
+		//* {
+		//	display: none; // Temp
+		//}
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			//bottom: -7px;
+			bottom: -14px;
+			height: 14px;
+			width: 100%;
+			left: 0;
+			right: 0;
+			background-image: url("/img/header-torn-cloth.png");
+			background-repeat: repeat-x;
+			background-position: left bottom;
+		}
+		@include e(content) {
+			@include contentArea();
+		}
+		@include e(logo) {
+			background-image: url("/img/logo-ilk.png");
+			//width: 61px;
+			width: 120px;
+			height: 40px;
+			background-position: right center;
+		}
+		@include e(social) {
+			display: none;
+		}
+		@include e(nav) {
+			border-bottom: none;
+			ul {
+				li {
+					a {
+						@include fontSize(beta, 1);
+						color: findme;
+					}
+				}
+			}
+			@include onlyInDebug() {
+				background-color: purple;
+			}
+		}
+	}
+	@include m(retract) {
+		@include containerArea();
+		height: 7px; // temp
+		* {
+			display: none; // Temp
+		}
+	}
+}

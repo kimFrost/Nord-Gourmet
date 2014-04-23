@@ -1,0 +1,350 @@
+
+.spot {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	& > a {
+		display: block;
+	}
+	img {
+		display: block;
+		margin: 0;
+		outline: 0;
+	}
+	.spot__inner {
+		@include fill();
+		border-style: solid;
+		border-color: #fff;
+		border-width: 0;
+		z-index: 20;
+	}
+	.spot__bg {
+		@include fill();
+		overflow: hidden;
+		z-index: 10;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-color: #eee;
+	}
+	.spot__content {
+		@include fill();
+		top: auto;
+		background-color: #00bcea;
+		padding: 5px;
+		color: #fff;
+		z-index: 20;
+		text-align: left;
+	}
+	.spot__line1 {
+		@include fontSize(delta);
+		font-family: $fontSuzukiHeadline;
+		color: inherit;
+		text-align: inherit;
+		& [class^="icon"] {
+			@include fontSize(beta);
+		}
+	}
+	.spot__line2 {
+		@include fontSize(gamma);
+		font-family: $fontSuzukiRegular;
+		color: #000;
+		text-align: inherit;
+	}
+	.spot__linecontent {
+		@include fontSize(beta);
+		font-family: $fontContent;
+		font-family: $fontSuzukiRegular;
+		z-index: 20;
+		position: relative;
+		text-align: justify;
+		h1,h2,h3,h4 {
+			@include fontSize(delta);
+			margin-bottom: 0;
+		}
+		%btn {
+			@include fontSize(beta);
+			margin: 5px auto;
+			width: 95%;
+			display: block;
+		}
+		%btnText {
+			font-family: $fontSuzukiHeadline;
+		}
+		%evobtn {
+			@include fontSize(beta);
+			margin: 15px auto;
+			width: 55%;
+			display: block;
+		}
+		%evobtnText {
+			font-family: $fontSuzukiHeadline;
+		}
+		.iframe{
+			background-color: #eee;
+			width: 100%;
+
+			text-align: center;
+		}
+	}
+
+/* 	Modifiers (Structure)
+---------------------------------------------------*/
+	&.spot--edge {
+		.spot__content {
+			padding: 0;
+		}
+	}
+	&.spot--split {
+		.spot__bg {
+			right: 50%;
+			margin-right: 10px;
+		}
+		.spot__content {
+			left: 50%;
+			top: 0;
+			bottom: auto;
+		}
+		.spot__linecontent {
+			margin-top: 20px;
+		}
+	}
+	&.spot--split:not(.spot--border) {
+		// Shadow overwrite
+		%shadow-before,
+		%shadow-after {
+			margin-right: 13px;
+			right: 50%;
+			left: 2px;
+		}
+	}
+	&.spot--border {
+		.spot__inner {
+			border-width: 10px;
+		}
+	}
+
+
+/* 	Modifiers (Alignment)
+---------------------------------------------------*/
+	&.spot--aligntopright {
+		.spot__content {
+			right: 0;
+			top: 0;
+			bottom: auto;
+			text-align: right;
+		}
+	}
+	&.spot--alignbottomright {
+		.spot__content {
+			right: 0;
+			top: auto;
+			bottom: 0;
+			text-align: right;
+		}
+	}
+	&.spot--alignbottomleft {
+		.spot__content {
+			left: 0;
+			top: auto;
+			bottom: 0;
+			text-align: left;
+		}
+		&.spot--split {
+			.spot__content {
+				left: 50%;
+			}
+		}
+	}
+	&.spot--aligntopleft {
+		.spot__content {
+			left: 0;
+			top: 0;
+			bottom: auto;
+			text-align: left;
+		}
+		&.spot--split {
+			.spot__content {
+				left: 50%;
+			}
+		}
+	}
+
+
+/* 	Modifiers (Color)
+---------------------------------------------------*/
+	&[ng-click],
+	&[data-ng-click],
+	&.spot--link {
+		cursor: pointer;
+		&:hover {
+			opacity: 0.8;
+		}
+		&:active {
+			opacity: 0.9;
+		}
+	}
+	&.spot--nobg {
+		.spot__content {
+			background: none;
+		}
+		&.spot--split,
+		&.spot--split.spot--textshadow {
+			.spot__content {
+				background: none;
+			}
+		}
+	}
+	&.spot--textshadow {
+		.spot__content {
+			background-color: rgba(0,0,0,0.5);
+		}
+	}
+	&.spot--nobg.spot--textshadow {
+		.spot__content {
+			background-color: rgba(0,0,0,0.5);
+		}
+	}
+}
+
+
+/* 	Themes
+---------------------------------------------------*/
+.spot {
+	// Theme Overrides
+	@include themeThis() {
+		&.spot--2x3 {
+			.spot__line2 {
+				color: $themeColor4;
+			}
+			.spot__linecontent {
+				color: $themeColor4;
+			}
+		}
+		&.spot--edge {
+			.spot__content {
+				background: transparent;
+			}
+			.spot__line1 {
+				color: $themeColor1;
+			}
+			.spot__line2 {
+				color: $themeColor4;
+			}
+			.spot__linecontent {
+				color: $themeColor4;
+				h1,h2,h3,h4 {
+					color: $themeColor1;
+				}
+			}
+		}
+		&.spot--nobg {
+			.spot__content {
+				//background: none !important;
+				background: none;
+			}
+			.spot__line1 {
+				//color: $themeColor5 !important;
+				color: $themeColor5;
+				//.partial-collectionItemSpotLine1Link {
+				//	color: $themeColor5 !important;
+				//}
+			}
+			&.spot--textshadow {
+				.spot__content {
+					background-color: rgba(returnContrastBlackWhite($themeColor2), 0.5);
+				}
+
+			}
+			&.spot--split {
+				.spot__line2 {
+					color: $themeColor5;
+				}
+				.spot__linecontent {
+					color: $themeColor5;
+				}
+			}
+		}
+		&.spot--textshadow {
+			.spot__content {
+				background-color: rgba(returnContrastBlackWhite($themeColor2), 0.5);
+			}
+		}
+	}
+
+
+	@include themeThisBox() {
+		.spot__content {
+			background: $themeColor5;
+		}
+		.spot__line1 {
+			color: $themeColor2;
+		}
+		/*
+		%partial-collectionItemSpotLine1Link {
+			color: $themeColor2;
+			&:hover {
+				color: lighten($themeColor2,10%);
+			}
+			&:active {
+				color: darken($themeColor2,10%);
+			}
+		}
+		*/
+		.spot__line2 {
+			color: $themeColor3;
+		}
+		.spot__linecontent {
+			color: $themeColor3;
+		}
+		.spot__inner {
+			border-color: $themeColor1;
+		}
+		&.spot-transparent {
+			.spot__content {
+				@include backgroundTransparentColor($themeColor5, 0.8);;
+			}
+		}
+	}
+	@include themeThis() {
+		.spot__content {
+			background: $themeColor5;
+		}
+		.spot__line1 {
+			color: $themeColor2;
+		}
+		/*
+		%partial-collectionItemSpotLine1Link {
+			color: $themeColor2;
+			&:hover {
+				color: lighten($themeColor2,10%);
+			}
+			&:active {
+				color: darken($themeColor2,10%);
+			}
+		}
+		*/
+		.spot__line2 {
+			color: $themeColor3;
+		}
+		.spot__linecontent {
+			color: $themeColor3;
+		}
+		.spot__inner {
+			border-color: $themeColor1;
+		}
+		&.spot-transparent {
+			.spot__content {
+				@include backgroundTransparentColor($themeColor5, 0.8);;
+			}
+		}
+	}
+}
+
+// Gloal Theming
+//@include themeThis() {
+//	.spot {
+//
+//	}
+//}

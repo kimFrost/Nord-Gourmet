@@ -1,0 +1,67 @@
+
+$_blockName: 'modal';
+
+$_modal_contentHeight: 560px;
+$_modal_contentWidth: 680px;
+
+
+@include block($_blockName) {
+	@include fill();
+	position: fixed;
+	display: none;
+	z-index: 90;
+	&, * {
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
+	@include m(show) {
+		display: block;
+	}
+	@include m(hide) {
+		display: none;
+	}
+	@include e(bg) {
+		@include fill();
+		background-color: rgba($color_sand, 0.7);
+	}
+	@include e(content) {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -($_modal_contentHeight / 2);
+		margin-left: -($_modal_contentWidth / 2);
+		height: $_modal_contentHeight;
+		width: $_modal_contentWidth;
+		background-color: $color_white;
+		padding: 30px;
+		@include e(content__inner) {
+			position: relative;
+			height: 100%;
+			width: 100%;
+			iframe {
+				width: 100% !important;
+				height: 100% !important;
+			}
+			@include e(headline) {
+				display: block;
+				width: 100%;
+				font-family: $font_ministerBook;
+				color: $color_geramontRed;
+			}
+			@include e(video) {
+				@include fill();
+				top: 50px;
+			}
+		}
+	}
+	@include e(shadow) {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: ($_modal_contentHeight / 2);
+		margin-left: -($_modal_contentWidth / 2);
+		//height: 14px;
+		width: $_modal_contentWidth;
+	}
+}
