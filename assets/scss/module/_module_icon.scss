@@ -1,0 +1,41 @@
+
+$__blockName: 'icon';
+
+@include block($__blockName) {
+	@include border-radius(50%, 50%, 50%, 50%);
+	background-color: $color_textgrey;
+	padding: 10px;
+	height: 22px;
+	width: 22px;
+	display: block;
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	background-repeat: no-repeat;
+	background-position: center center;
+	&:hover {
+		background-color: lighten($color_textgrey, 10%);
+	}
+	&:active {
+		background-color: darken($color_textgrey, 10%);
+	}
+	@include m(facebook) {
+		background-image: url(/img/icons/icon_facebook.png);
+	}
+	@include m(instagram) {
+		background-image: url(/img/icons/icon_instragram.png);
+	}
+	@include m(linkedin) {
+		background-image: url(/img/icons/icon_linkein.png);
+	}
+	@include m(twitter) {
+		background-image: url(/img/icons/icon_twitter.png);
+	}
+	@include m(pinterest) {
+		background-image: url(/img/icons/icon_pinterest.png);
+	}
+	@include m(foursquare) {
+		background-image: url(/img/icons/icon_foursquare.png);
+	}
+}
+

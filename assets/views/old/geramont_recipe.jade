@@ -1,0 +1,57 @@
+extends ../layout
+
+block append head2
+	link(rel='stylesheet', href='/css/brand/geramont/geramont.css')
+block append globalVars2
+	- brandClasses += " geramont";
+	- headerClasses += " l__header--ripped";
+	- footerClasses += " l__footer--ripped";
+block append brandHeader
+	include ../blocks/geramont_nav
+block append brandContent
+	div.geramont__content
+		div.brand__paper
+
+			aside.brand__paperAside.geramont__widgetlist
+				include ../blocks/widget_recipe
+				div.seperator
+				include ../blocks/widget_recipe
+				div.seperator
+				include ../blocks/widget_recipe
+				div.seperator
+				include ../blocks/widget_recipe
+
+			section.brand__paperMain
+				include ../blocks/breadcrumb
+
+				section.recipe
+					div.recipe__header
+						img(src="http://placehold.it/679x330")
+						div.recipe__header__spot
+							img(src="http://placehold.it/250x170")
+					div.recipe__content
+						div.recipe__content__head
+							div.recipe__content__left
+								h1.recipe__headline RecipeHeadline
+							div.recipe__content__right
+								div.difficulty.difficulty--d1
+								div.time 35 min
+
+						div.recipe__content__body
+							div.recipe__content__left.recipe__content
+								h2 SådanGørDu
+								ol.numberlist
+									li.numberlist__item Mollitia obcaecati odit, perferendis possimus tempora vero. Distinctio ea harum i
+									li.numberlist__item Mollitia obcaecati odit, perferendis possimus tempora vero. Distinctio ea harum i
+									li.numberlist__item Mollitia obcaecati odit, perferendis possimus tempora vero. Distinctio ea harum i
+									li.numberlist__item Mollitia obcaecati odit, perferendis possimus tempora vero. Distinctio ea harum i
+
+							div.recipe__content__right.recipe__content__nutrients
+								h2 Secret ingredients
+								p Mollitia obcaecati odit, perferendis possimus tempora vero. Distinctio ea harum ipsum necessitatibus pariatur tenetur veniam.
+								p Mollitia obcaecati odit, perferendis possimus tempora vero. Distinctio ea harum ipsum necessitatibus pariatur tenetur veniam.
+								p Mollitia obcaecati odit, perferendis possimus tempora vero. Distinctio ea harum ipsum necessitatibus pariatur tenetur veniam.
+								div.seperator.seperator--line
+								h2 Secret Nutrients
+								p Mollitia obcaecati odit, perferendis possimus tempora vero. Distinctio ea harum ipsum necessitatibus pariatur tenetur veniam.
+								p Mollitia obcaecati odit, perferendis possimus tempora vero. Distinctio ea harum ipsum necessitatibus pariatur tenetur veniam.

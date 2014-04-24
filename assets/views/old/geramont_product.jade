@@ -1,0 +1,68 @@
+extends ../layout
+
+block append head2
+	link(rel='stylesheet', href='/css/brand/geramont/geramont.css')
+block append globalVars2
+	- brandClasses += " geramont";
+	- headerClasses += " l__header--ripped";
+	- footerClasses += " l__footer--ripped";
+block append brandHeader
+	include ../blocks/geramont_nav
+block append brandContent
+	div.geramont__content
+		div.brand__paper
+			aside.brand__paperAside.geramont__widgetlist
+				include ../blocks/widget_recipe
+				div.seperator
+				include ../blocks/widget_recipe
+				div.seperator
+				include ../blocks/widget_recipe
+				div.seperator
+				include ../blocks/widget_recipe
+
+			section.brand__paperMain
+				include ../blocks/breadcrumb
+
+				section.product
+					div.product__image
+						img(src="http://placehold.it/475x225")
+					div.product__addImage
+						img(src="http://placehold.it/203x220")
+					div.product__content
+						h1.product__headline ProductName
+						div.product__innerContent
+							p Der verführerische französische Weichkäse schmeckt so cremig gut. Ein Fest für alle Sinne.
+							p
+								b Französischer Weichkäse aus pasteurisierter Kuhmilch
+								br
+								b Geschmack:
+								|  mild-cremig
+								br
+								b Konsistenz:
+								|  cremig
+						div.product__nutrient
+							ul
+								li
+									b Géramont Der Würzige (Käsetheke)
+								li Fettgehalt i. Tr.: 60 %
+								li Fettgehalt absolut: 30 %
+							ul
+								li
+									b Nährwertangabe pro 100 g:
+								li Brennwert: 1416 kJ / 342 kcal
+								li Eiweiß: 15 g
+								li Kohlenhydrate: 3 g
+								li Fett: 30 g
+
+
+				section.related
+					h1.related__headline Headline
+					ul.related__list
+						- for (var i = 0; i < Math.floor((Math.random()*12)+1); i++)
+							li.related__item
+								a
+									img(src="http://placehold.it/155x90")
+
+
+
+

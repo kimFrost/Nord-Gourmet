@@ -1,0 +1,37 @@
+extends ../master
+
+block append head
+
+block append body
+
+block append content
+
+	section.container
+		div.container__inner
+			div.splash.splash--height700
+				div.splash__text
+					span.fontsize.fontsize--kappa Forberedelse
+				div.splash__item(style="background-image:url(http://placehold.it/600x300)")
+
+	section.container
+		div.container__inner
+			include ../blocks/breadcrumb
+
+	section.container
+		div.container__inner
+			div.pane(data-ng-controller="PaneCtrl")
+				div.pane__nav
+					div.pane__link(data-ng-click="switchPane(1)", data-ng-class="{'pane__link--active': checkActive(1)}") Velkommen til NORD
+					div.pane__link(data-ng-click="switchPane(2)", data-ng-class="{'pane__link--active': checkActive(2)}") Nye behov
+					div.pane__link(data-ng-click="switchPane(3)", data-ng-class="{'pane__link--active': checkActive(3)}") Nordisk tapas
+				div.pane__container
+					div.pane__item(data-ng-class="{'pane__item--active': checkActive(1)}")
+						div.grid.grid--12.grid--spaceright Content 1 left
+							| NORD er fastfood på en ny måde. Det er nyt dansk smørrebrød – Nordisk tapas smørrebrød. Godt rugbrød. Lidt, men godt – Sundt og nærende - og spises med fingrene. Hurtigt – nemt – og med god samvittighed. Nordisk æstetisk - samtidig cool og urban - Streetagtig. Salget sker via foodtrucks.  Man kan sige pølsevognens afløser. 
+							br
+							| Der tænkt på alle detaljer lige fra indretningen af foodtrucken, udtrykket hos medarbejderne, over musikken, til emballagen og interaktion med de sociale medier. Første foodtruck er
+						div.grid.grid--12.grid--spaceleft Content 1 right
+							| placeret ved større events samt står ved indfaldsveje til- og i større byer i første omgang i Danmark og i Nordtyskland. Første foodtruck er placeret ved større events samt står ved indfaldsveje til- og i større byer i første omgang i Danmark og i Nordtyskland. I det hele taget der hvor der er mange mennesker. Planerne er lagt: Flere gourmet foodtrucks kommer til.  En hvert halve år. Du kan også få mulighed for at smage vores mad. På Facebook: NORDGourmet kan du hele tiden følge med i hvor vi er.
+					div.pane__item(data-ng-class="{'pane__item--active': checkActive(2)}") content 2
+					div.pane__item(data-ng-class="{'pane__item--active': checkActive(3)}") content 3
+
