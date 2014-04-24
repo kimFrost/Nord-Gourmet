@@ -1,11 +1,37 @@
-extends ../layout
+extends ../master
 
-block append head2
+block append head
 
-block append globalVars2
+block append body
 
-block append brandHeader
-	p brandHeader
+block append content
 
-block append brandContent
-	p brandContent
+	section.container
+		div.container__inner
+			a.splash.splash--height700(href="forberedelse.html")
+				div.splash__text
+					span.fontsize.fontsize--kappa Forberedelse
+				div.splash__item(style="background-image:url(http://placehold.it/600x300)")
+
+	section.container
+		div.container__inner
+			div.cluster.cluster--line3.cluster--autoHeight
+				div.cluster__list
+					div.cluster__item
+						div.cluster__inner
+							a.splash(href="menu.html")
+								img(src="http://placehold.it/300x300")
+								div.splash__text
+									span.fontsize.fontsize--eta Menu
+					div.cluster__item
+						div.cluster__inner
+							a.splash(href="om_nord.html")
+								img(src="http://placehold.it/300x300")
+								div.splash__text
+									span.fontsize.fontsize--eta Om nord
+					div.cluster__item
+						div.cluster__inner
+							a.splash(href="foodtruck.html")
+								img(src="http://placehold.it/300x300")
+								div.splash__text
+									span.fontsize.fontsize--eta Foodtruck

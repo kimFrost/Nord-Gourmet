@@ -10,11 +10,49 @@ $__num_of_heights: ($__max_height - $__min_height) / $__height_interval;
 	position: relative;
 	width: 100%;
 	height: 100%;
+	display: block;
+	& > img {
+		display: block;
+		width: 100%;
+		margin: 0;
+	}
+	@include e(text) {
+		@include fill();
+		display: block;
+		font-family: $font_didotRegular;
+		color: $color_white;
+		font-weight: normal;
+		width: 100%;
+		height: 100%;
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+		z-index: 1;
+		word-break: break-all;
+	}
+	// Flexbox fallback
+	.no-flexbox & {
+		display: table;
+		.splash__text {
+			display: table-cell;
+			text-align: center;
+			vertical-align: middle;
+		}
+	}
+
+
+
 	@include e(item) {
 		@include fill();
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
+		z-index: 0;
 		img {
 			display: block;
 		}

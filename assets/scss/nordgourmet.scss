@@ -2,10 +2,10 @@
 @import "compass";
 
 @import "global/_global_variables";
+@import "global/_global_mediaqueries";
 @import "global/_global_fonts";
 @import "global/_global_extendlist";
 @import "global/_global_themes";
-@import "global/_global_mediaqueries";
 @import "global/_global_listfunctions";
 @import "global/_global_mixins";
 @import "global/_global_blockconstructor";
@@ -17,6 +17,11 @@
 @import "module/_module_grid";
 @import "module/_module_splash";
 @import "module/_module_cluster";
+@import "module/_module_fontsize";
+@import "module/_module_icon";
+@import "module/_module_inlinelist";
+@import "module/_module_breadcrumb";
+@import "module/_module_pane";
 
 @import "vendor/_vendor_boilerplate";
 @import "vendor/_vendor_font_textile";

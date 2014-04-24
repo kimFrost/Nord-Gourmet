@@ -1,9 +1,10 @@
 doctype html
 html(data-ng-app="Nordgourmet")
 	head
-		title= Nordgourmet
+		title Nord gourmet
 		meta(charset="UTF-8")
-		//link(rel='stylesheet', href='http://fast.fonts.net/cssapi/67fc82a3-5a38-467c-b060-c8637a9c9dd7.css')
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(rel='stylesheet', href='http://fast.fonts.net/cssapi/1e457648-3309-409a-bd99-0042ef6cab84.css')
 		link(rel='stylesheet', href='/css/nordgourmet.css')
 		// Main app js
 		script(src='/scripts/head.js')
@@ -17,44 +18,78 @@ html(data-ng-app="Nordgourmet")
 			header.logo
 				img(src="/img/logo.png", alt="Nord Gourmet")
 
-			section.container
-				div.container__inner
-					div.splash.splash--height700
-						div.splash__item(style="background-image:url(http://placehold.it/500x300)")
+			block content
 
 
-			section.container
+
+			//section.container
 				div.container__inner
-					div.cluster.cluster--line3
+					div.cluster.cluster--line3.cluster--autoHeight
 						div.cluster__list
 							div.cluster__item
-								div.cluster__inner 1
+								div.cluster__inner
+									a.splash(href="#")
+										img(src="http://placehold.it/300x300")
+										div.splash__text
+											span.fontsize.fontsize--eta Menu
 							div.cluster__item
-								div.cluster__inner 2
+								div.cluster__inner
+									a.splash(href="#")
+										img(src="http://placehold.it/300x300")
+										div.splash__text
+											span.fontsize.fontsize--eta Om nord
 							div.cluster__item
-								div.cluster__inner 3
+								div.cluster__inner
+									a.splash(href="#")
+										img(src="http://placehold.it/300x300")
+										div.splash__text
+											span.fontsize.fontsize--eta Foodtruck
 
-			section.container
+			//section.container
 				div.container__inner
 					div.container__content
-						div.cluster.cluster--line3
+						div.cluster.cluster--line3.cluster--autoHeight
 							div.cluster__list
 								div.cluster__item
-									div.cluster__inner 1
+									div.cluster__inner
+										a.splash(href="#")
+											img(src="http://placehold.it/300x300")
+											div.splash__text
+												span.fontsize.fontsize--eta Menu
 								div.cluster__item
-									div.cluster__inner 2
+									div.cluster__inner
+										a.splash(href="#")
+											img(src="http://placehold.it/300x300")
+											div.splash__text
+												span.fontsize.fontsize--eta Om nord
 								div.cluster__item
-									div.cluster__inner 3
+									div.cluster__inner
+										a.splash(href="#")
+											img(src="http://placehold.it/300x300")
+											div.splash__text
+												span.fontsize.fontsize--eta Foodtruck
 
-			section.container
+			//section.container
 				div.container__inner
 					div.container__content Content
 
-			footer.container
-				div.footer
-					div.container__inner
-						div.footer__left © Copyright by NORD. All rights reserved
-						div.footer__right Icons
+			div.footer
+				div.footer__left © Copyright by NORD. All rights reserved
+				div.footer__right
+					ul.inlinelist
+						li.inlinelist__item
+							a.icon.icon--facebook(href="#", target="_blank", title="Facebook")
+						li.inlinelist__item
+							a.icon.icon--instagram(href="#", target="_blank", title="Instagram")
+						li.inlinelist__item
+							a.icon.icon--linkedin(href="#", target="_blank", title="Linkedin")
+						li.inlinelist__item
+							a.icon.icon--twitter(href="#", target="_blank", title="Twitter")
+						li.inlinelist__item
+							a.icon.icon--pinterest(href="#", target="_blank", title="Pinterest")
+						li.inlinelist__item
+							a.icon.icon--foursquare(href="#", target="_blank", title="Foursquare")
+
 
 
 

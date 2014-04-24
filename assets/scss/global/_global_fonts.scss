@@ -1,18 +1,9 @@
 
 /* Global font type */
 
-$font_linotypeUniCon: "Linotype Univers W01 Cn", "Myriad Pro", "Arial", Sans-serif;
-$font_linotypeUniBold: "LinotypeUniversW01-Bold 723691", "Myriad Pro", "Arial", Sans-serif;
-$font_ministerBold: "Minister W01 Bold 710207", "Myriad Pro", "Arial", Sans-serif;
-$font_ministerBook: "Minister W01 Book 710213", "Myriad Pro", "Arial", Sans-serif;
-$font_textileRegular: "textileregular", "Myriad Pro", "Arial", Sans-serif;
-$font_arial: Arial, Sans-serif;
-
-
-//$font_Content: 'Myriad Pro', Arial, Helvetica, sans-serif;
-
-//$primNavFont: $font_BauerBodoniBold;
-//$headlineFont: $font_BauerBodoniItalic;
+$font_didotRegular: "Didot eText W01 Regular", "Myriad Pro", "Arial", Sans-serif;
+$font_didotBold: "Didot eText W01 Bold", "Myriad Pro", "Arial", Sans-serif;
+$font_basic: "Myriad Pro", "Arial", Sans-serif;
 
 
 /* Global font Calculation */ 
@@ -27,22 +18,24 @@ $type-scale-unit-value: rem;
 
 $alpha: 11;
 $beta: 12;
-$gamma: 13;
-$delta: 14;
-$epsilon: 16;
-$zeta: 18;
-$eta: 21;
-$theta: 24;
-$iota: 32;
-$kappa: 48;
+$gamma: 14;
+$delta: 16;
+$epsilon: 18;
+$zeta: 21;
+$eta: 24;
+$theta: 32;
+$iota: 48;
+$kappa: 64;
 
 $fontsizes: alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta, eta $eta, theta $theta, iota $iota, kappa $kappa;
 
 @mixin modular-scale($scale, $base, $value, $measure:"", $lineHeightMultiplier:1.0) {
 	font-size: $scale#{px};
 	font-size: modular-scale($scale, $base, $value);
-	line-height: ($scale*$lineHeightMultiplier)#{px};
-	line-height: modular-scale($scale*$lineHeightMultiplier, $base, $value);
+	@if $lineHeightMultiplier != 0 {
+		line-height: ($scale*$lineHeightMultiplier)#{px};
+		line-height: modular-scale($scale*$lineHeightMultiplier, $base, $value);
+	}
 }
 
 @function modular-scale($scale, $base, $value) {
@@ -103,6 +96,12 @@ $fontsizes: alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsil
 // Set base font size, from which all will scale
 html {
 	font-size: percentage($font-size / 100) !important;
+	@include mediaQueries(tablet){
+		//font-size: percentage($font-size / 100) * 0.9 !important;
+	}
+	@include mediaQueries(mobile){
+		font-size: percentage($font-size / 100) * 0.75 !important;
+	}
 }
 
 //@extend %alpha;

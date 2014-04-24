@@ -2,21 +2,48 @@
 $_blockName: 'footer';
 
 @include block($_blockName) {
+	@include fontSize(zeta, 0);
+	font-family: $font_didotRegular;
 	width: 100%;
+	background-color: $color_white;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	& {
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
 	&:after {
 		content: "";
 		display: block;
 		clear: both;
 	}
 	@include e(left) {
-		margin-left: 20px;
+		margin-left: 40px;
 		float: left;
 		text-align: left;
+		line-height: 42px;
+		color: $color_textlightgrey;
 	}
 	@include e(right) {
-		margin-right: 20px;
+		margin-right: 40px;
 		float: right;
 		text-align: right;
+	}
+	@include e(left right) {
+		@include mediaQueries(mobile){
+			clear: both;
+			width: 100%;
+			margin: 0;
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			justify-content: center;
+		};
 	}
 }
 

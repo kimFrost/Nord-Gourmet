@@ -72,19 +72,19 @@
 	@if $_prop == "color" {
 		color: $_color;
 		&:hover {
-			color: lighten($_color,15%);
+			color: lighten($_color,10%);
 		}
 		&:active {
-			color: darken($_color,15%);
+			color: darken($_color,10%);
 		}
 	}
 	@if $_prop == "background" or $_prop == "background-color"{
 		background-color: $_color;
 		&:hover {
-			background-color: lighten($_color,15%);
+			background-color: lighten($_color,10%);
 		}
 		&:active {
-			background-color: darken($_color,15%);
+			background-color: darken($_color,10%);
 		}
 	}
 }

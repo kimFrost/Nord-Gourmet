@@ -169,5 +169,10 @@ $cluster_num_of_heigths: ($cluster_max_item_height - $cluster_min_item_height) /
 			}
 		}
 	}
+	&.cluster--autoHeight {
+		.cluster__item {
+			height: auto;
+		}
+	}
 }
 

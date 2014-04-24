@@ -13,13 +13,17 @@ module.exports = function (grunt) {
 			},
 			head: {
 				src: [
-
+					'js/libs/html5shiv.js',
+					'js/libs/namespace/namespaces.js',
+					'js/libs/angular/1.2.14/angular.js',
+					'js/nordgourmet.js'
 				],
 				dest: '../scripts/head.js'
 			},
 			nordgourmet: {
 				src: [
-
+					'js/angular.nordgourmet.js',
+					'js/nordgourmet.angular.controllers.js'
 				],
 				dest: '../scripts/nordgourmet.js'
 			}

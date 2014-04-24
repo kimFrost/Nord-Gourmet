@@ -19,6 +19,11 @@ $__gutterWidth: 20px;
 	@include e(inner) {
 		position: relative;
 		width: 100%;
+		&:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
 		@include onlyInDebug() {
 			background-color: gold;
 		}
@@ -36,7 +41,8 @@ $__gutterWidth: 20px;
 			width: $contentWidth;
 		};
 		@include mediaQueries(mobile){
-			width: $contentWidth;
+			//width: $contentWidth;
+			width: 100%;
 		};
 	}
 	// Media Queries (container)
