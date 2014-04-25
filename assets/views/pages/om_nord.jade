@@ -8,10 +8,10 @@ block append content
 
 	section.container
 		div.container__inner
-			div.splash.splash--height700(data-ng-controller="SplashCtrl", data-imgsrc="http://placehold.it/600x400")
+			div.splash.splash--height700(data-ng-controller="SplashCtrl", data-imgsrc="img/content/1200x700/06Jonas-Fotografi.jpg")
 				div.splash__text
-					span.fontsize.fontsize--kappa Forberedelse
-				div.splash__item(style="background-image:url(http://placehold.it/600x400)", data-ng-style="data.itemCss")
+					span.fontsize.fontsize--kappa Om nord
+				div.splash__item(style="background-image:url(img/content/1200x700/06Jonas-Fotografi.jpg)", data-ng-style="data.itemCss")
 
 	section.container
 		div.container__inner
@@ -24,8 +24,8 @@ block append content
 				div.pane(data-ng-controller="PaneCtrl")
 					div.pane__nav
 						div.pane__link(data-ng-click="switchPane(1, '')", data-ng-class="{'pane__link--active': checkActive(1)}") Velkommen til NORD
-						div.pane__link(data-ng-click="switchPane(2, 'http://placehold.it/600x200')", data-ng-class="{'pane__link--active': checkActive(2)}") Nye behov
-						div.pane__link(data-ng-click="switchPane(3, 'http://placehold.it/600x300')", data-ng-class="{'pane__link--active': checkActive(3)}") Nordisk tapas
+						div.pane__link(data-ng-click="switchPane(2, 'img/content/1200x700/fotoKOKbjerg.JPG')", data-ng-class="{'pane__link--active': checkActive(2)}") Nye behov
+						div.pane__link(data-ng-click="switchPane(3, 'img/content/1200x700/_MG_6913.jpg')", data-ng-class="{'pane__link--active': checkActive(3)}") Nordisk tapas
 					div.pane__container
 						div.pane__item(data-ng-class="{'pane__item--active': checkActive(1)}")
 							div.grid.grid--12.grid--spaceright
@@ -34,6 +34,19 @@ block append content
 								| Der tænkt på alle detaljer lige fra indretningen af foodtrucken, udtrykket hos medarbejderne, over musikken, til emballagen og interaktion med de sociale medier. 
 							div.grid.grid--12.grid--spaceleft
 								| Første foodtruck er placeret ved større events samt står ved indfaldsveje til- og i større byer i første omgang i Danmark og i Nordtyskland. Første foodtruck er placeret ved større events samt står ved indfaldsveje til- og i større byer i første omgang i Danmark og i Nordtyskland. I det hele taget der hvor der er mange mennesker. Planerne er lagt: Flere gourmet foodtrucks kommer til.  En hvert halve år. Du kan også få mulighed for at smage vores mad. På Facebook: NORDGourmet kan du hele tiden følge med i hvor vi er.
-						div.pane__item(data-ng-class="{'pane__item--active': checkActive(2)}") content 2
-						div.pane__item(data-ng-class="{'pane__item--active': checkActive(3)}") content 3
-
+						div.pane__item(data-ng-class="{'pane__item--active': checkActive(2)}")
+							div.grid.grid--12.grid--spaceright
+								| Iværksætter Annette Møller Therkelsen og kok Lee Berg har sat sig for at finde en løsning på vores stigende behov for at klare maden i en fart. Flere og flere løser jo spisesituationen undervejs fra et sted til et andet. 
+								br
+								| Vi ønsker hurtig afvikling af maden, men vi lader os ikke længere spise af med en flad burger eller en hotdog. Vi stiller større og større krav til god stil, gode råvarer og et æstetisk udtryk. 
+							div.grid.grid--12.grid--spaceleft
+								| Mad fra Danmark er hot og in. Og småt er godt. Det visuelle og sunde ligger i tiden. Vi er nu parate til at vise vores bud på en sund fastfood løsning, hvor der er taget højde for krav til indhold, kvalitet og look.  
+								br
+								| Vi har taget alt det gode Danmark står for og er gode til: Kvalitet, design, gode råvarer og så har vi overført det til gadeplan. Gourmet i øjenhøjde.
+						div.pane__item(data-ng-class="{'pane__item--active': checkActive(3)}")
+							div.grid.grid--12.grid--spaceright
+								| Nordisk Tapas smørrebrød er rugbrød – lavet på svedjerug. Alle brødene rummer hver i sær en himmerigsmundfuld, idet der nøje er tænkt over teksturer og smagsnuancer. Hvad siger du f.eks. til: Varmrøget laks med rygeostecreme og fennikel? 
+							div.grid.grid--12.grid--spaceleft
+								| Stegt kartoffel med avocado, mozarella  pesto og grove chips? 
+								br
+								| eller Roastbeef med hjemmerørt remulade, glaserede rødløg og brøndkarse? Se mere under menu

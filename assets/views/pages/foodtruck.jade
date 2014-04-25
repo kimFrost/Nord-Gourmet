@@ -10,12 +10,22 @@ block append content
 		div.container__inner
 			div.splash.splash--height700
 				div.splash__text
-					span.fontsize.fontsize--kappa Forberedelse
-				div.splash__item(style="background-image:url(http://placehold.it/600x300)")
+					span.fontsize.fontsize--kappa Foodtruck
+				div.splash__item(style="background-image:url(img/content/1200x700/_MG_6886_2.jpeg)")
 
 	section.container
 		div.container__inner
-			include ../blocks/breadcrumb
+			div.container__content
+				include ../blocks/breadcrumb
 
 	section.container
 		div.container__inner
+			div.container__content
+				div.pane(data-ng-controller="PaneCtrl")
+					div.pane__nav
+						div.pane__link(data-ng-click="switchPane(1, '')", data-ng-class="{'pane__link--active': checkActive(1)}") Foodtrucken
+					div.pane__container
+						div.pane__item(data-ng-class="{'pane__item--active': checkActive(1)}")
+							div.grid.grid--12.grid--spaceright
+								| Indhold kommer snart.
+							div.grid.grid--12.grid--spaceleft
