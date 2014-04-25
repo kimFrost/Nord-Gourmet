@@ -21,3 +21,32 @@ block append content
 
 	section.container
 		div.container__inner
+			div.container__content
+				div.pane(data-ng-controller="PaneCtrl")
+					div.pane__nav
+						div.pane__link(data-ng-click="switchPane(1)", data-ng-class="{'pane__link--active': checkActive(1)}") Menu 1
+						div.pane__link(data-ng-click="switchPane(2)", data-ng-class="{'pane__link--active': checkActive(2)}") Menu 2
+					div.pane__container
+						div.pane__item(data-ng-class="{'pane__item--active': checkActive(1)}")
+							div.menu
+								div.grid.grid--12
+									div.splash
+										img(src="http://placehold.it/500x400")
+								div.grid.grid--12.grid--spaceleft
+									div.menu__number.font.fontsize--delta No. 01
+									h1.menu__title.font.fontsize--theta Roastbeef
+									div.menu__desc.font.fontsize--zeta
+										p Roastbeef med hjemmelavet grov remoulade, syltede skallotteløg, høvlet peberrod og brøndkarse.
+							div.menu
+								div.grid.grid--12
+									div.splash
+										img(src="http://placehold.it/500x400")
+								div.grid.grid--12.grid--spaceleft
+									div.menu__number.font.fontsize--delta No. 02
+									h1.menu__title.font.fontsize--theta Roastbeef
+									div.menu__desc.font.fontsize--zeta
+										p Roastbeef med hjemmelavet grov remoulade, syltede skallotteløg, høvlet peberrod og brøndkarse.
+
+
+					div.pane__item(data-ng-class="{'pane__item--active': checkActive(2)}") content 2
+

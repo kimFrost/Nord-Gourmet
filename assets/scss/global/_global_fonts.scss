@@ -37,21 +37,10 @@ $fontsizes: alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsil
 		line-height: modular-scale($scale*$lineHeightMultiplier, $base, $value);
 	}
 }
-
 @function modular-scale($scale, $base, $value) {
 	// divide a given font-size by base font-size & return a relative em value
 	@return ($scale/$base)#{$value};
 }
-
-
-@each $size in $fontsizes {
-	//.#{nth($size, 1)},
-	//%#{nth($size, 1)}  {
-	//	@include modular-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
-	//}
-}
-
-
 @mixin fontSize($fontsizename:gamma,$lineHeightMultiplier: 1.0) {
 	& {
 		//@extend %#{$fontsizename};

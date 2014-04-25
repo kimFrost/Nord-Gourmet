@@ -35,13 +35,25 @@ $_blockName: 'footer';
 			clear: both;
 			width: 100%;
 			margin: 0;
+			text-align: center;
+
 			display: -webkit-box;
 			display: -moz-box;
 			display: -ms-flexbox;
 			display: -webkit-flex;
+
 			display: flex;
+
+			-webkit-box-align: center;
+			-webkit-flex-align: center;
+			-ms-flex-align: center;
+			-webkit-align-items: center;
 			align-items: center;
-			text-align: center;
+
+			-webkit-box-pack: center;
+			-moz-box-pack: center;
+			-ms-flex-pack: center;
+			-webkit-justify-content: center;
 			justify-content: center;
 		};
 	}

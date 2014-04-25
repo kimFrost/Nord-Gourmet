@@ -16,6 +16,7 @@ module.exports = function (grunt) {
 					'js/libs/html5shiv.js',
 					'js/libs/namespace/namespaces.js',
 					'js/libs/angular/1.2.14/angular.js',
+					'js/libs/modernizr/modernizr.custom.21372.js',
 					'js/nordgourmet.js'
 				],
 				dest: '../scripts/head.js'
@@ -37,7 +38,7 @@ module.exports = function (grunt) {
 				dest: '../scripts/head.min.js'
 			},
 			nordgourmet: {
-				src: '<%= concat.app.dest %>',
+				src: '<%= concat.nordgourmet.dest %>',
 				dest: '../scripts/nordgourmet.min.js'
 			}
 		},
@@ -69,7 +70,7 @@ module.exports = function (grunt) {
 		},
 		watch: {
 			scripts: {
-				files: ['<%= concat.app.src %>',
+				files: ['<%= concat.nordgourmet.src %>',
 					'<%= concat.head.src %>'],
 				tasks: ['concat']
 			},
