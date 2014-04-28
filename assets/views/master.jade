@@ -5,9 +5,9 @@ html(data-ng-app="Nordgourmet")
 		meta(charset="UTF-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		link(rel='stylesheet', href='http://fast.fonts.net/cssapi/1e457648-3309-409a-bd99-0042ef6cab84.css')
-		link(rel='stylesheet', href='/css/nordgourmet.css')
+		link(rel='stylesheet', href='css/nordgourmet.css')
 		// Main app js
-		script(src='/scripts/head.js')
+		script(src='scripts/head.js')
 		block head
 	body
 		block body
@@ -16,62 +16,10 @@ html(data-ng-app="Nordgourmet")
 
 
 			header.logo
-				img(src="/img/logo.png", alt="Nord Gourmet")
+				img(src="img/logo.png", alt="Nord Gourmet")
 
 			block content
 
-
-
-			//section.container
-				div.container__inner
-					div.cluster.cluster--line3.cluster--autoHeight
-						div.cluster__list
-							div.cluster__item
-								div.cluster__inner
-									a.splash(href="#")
-										img(src="http://placehold.it/300x300")
-										div.splash__text
-											span.fontsize.fontsize--eta Menu
-							div.cluster__item
-								div.cluster__inner
-									a.splash(href="#")
-										img(src="http://placehold.it/300x300")
-										div.splash__text
-											span.fontsize.fontsize--eta Om nord
-							div.cluster__item
-								div.cluster__inner
-									a.splash(href="#")
-										img(src="http://placehold.it/300x300")
-										div.splash__text
-											span.fontsize.fontsize--eta Foodtruck
-
-			//section.container
-				div.container__inner
-					div.container__content
-						div.cluster.cluster--line3.cluster--autoHeight
-							div.cluster__list
-								div.cluster__item
-									div.cluster__inner
-										a.splash(href="#")
-											img(src="http://placehold.it/300x300")
-											div.splash__text
-												span.fontsize.fontsize--eta Menu
-								div.cluster__item
-									div.cluster__inner
-										a.splash(href="#")
-											img(src="http://placehold.it/300x300")
-											div.splash__text
-												span.fontsize.fontsize--eta Om nord
-								div.cluster__item
-									div.cluster__inner
-										a.splash(href="#")
-											img(src="http://placehold.it/300x300")
-											div.splash__text
-												span.fontsize.fontsize--eta Foodtruck
-
-			//section.container
-				div.container__inner
-					div.container__content Content
 
 			div.footer
 				div.footer__left © Copyright by NORD. All rights reserved
@@ -91,42 +39,4 @@ html(data-ng-app="Nordgourmet")
 							a.icon.icon--foursquare(href="https://foursquare.com/v/nord-urban-gourmet-food-kolding-south-denmark/532ac6df498e33b6e705292e", target="_blank", title="Foursquare")
 
 
-
-
-			//block globalVars
-				- var brandClasses = "brand";
-				- var headerClasses = "l__header";
-				- var footerClasses = "l__footer";
-			//div(class="#{brandClasses}")
-				header(class="#{headerClasses}")
-					div.l__header__content
-						block layoutHeader
-						a.l__header__logo(href="/")
-						div.l__header__search
-							input(type="text", placeholder="Søg")
-						div.l__header__social
-							span Social Link
-							span Login link
-						nav.l__header__nav
-							ul
-								li
-									a Startseite
-								li
-									a Rezepte
-								li
-									a Alles über Käse
-								li
-									a Marken & proukte
-								li
-									a Gewinne & coupons
-
-				div.l__content
-					div.l__content__inner
-						block layoutContent
-
-
-				footer(class="#{footerClasses}")
-					div.l__footer__content
-						block layoutFooter
-
-		script(src='/scripts/nordgourmet.js')
+		script(src='scripts/nordgourmet.js')

@@ -27,11 +27,19 @@ $__blockName: 'pane';
 		cursor: pointer;
 		display: block;
 		float: left;
+		font-family: $font_didotBold;
+		font-weight: normal;
 		&:hover {
 			border-color: $color_black;
 		}
 		& + & {
 			margin-left: 20px;
+			@include mediaQueries(tablet){
+
+			};
+			@include mediaQueries(mobile){
+				margin-left: 15px;
+			};
 		}
 		@include m(active) {
 			border-color: $color_black;
@@ -46,6 +54,10 @@ $__blockName: 'pane';
 		text-align: justify;
 		@include m(active) {
 			display: block;
+		}
+		a {
+			font-family: $font_didotBold;
+			font-weight: normal;
 		}
 	}
 }

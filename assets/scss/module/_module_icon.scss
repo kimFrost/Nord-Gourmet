@@ -20,22 +20,22 @@ $__blockName: 'icon';
 		background-color: darken($color_textgrey, 10%);
 	}
 	@include m(facebook) {
-		background-image: url(/img/icons/icon_facebook.png);
+		background-image: url(../img/icons/icon_facebook.png);
 	}
 	@include m(instagram) {
-		background-image: url(/img/icons/icon_instragram.png);
+		background-image: url(../img/icons/icon_instragram.png);
 	}
 	@include m(linkedin) {
-		background-image: url(/img/icons/icon_linkein.png);
+		background-image: url(../img/icons/icon_linkein.png);
 	}
 	@include m(twitter) {
-		background-image: url(/img/icons/icon_twitter.png);
+		background-image: url(../img/icons/icon_twitter.png);
 	}
 	@include m(pinterest) {
-		background-image: url(/img/icons/icon_pinterest.png);
+		background-image: url(../img/icons/icon_pinterest.png);
 	}
 	@include m(foursquare) {
-		background-image: url(/img/icons/icon_foursquare.png);
+		background-image: url(../img/icons/icon_foursquare.png);
 	}
 }
 
