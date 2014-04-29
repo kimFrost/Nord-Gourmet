@@ -44,6 +44,12 @@ $__blockName: 'pane';
 		@include m(active) {
 			border-color: $color_black;
 		}
+		@include mediaQueries(tablet){
+
+		};
+		@include mediaQueries(mobile){
+			letter-spacing: -1px;
+		};
 	}
 	@include e(container) {
 		width: 100%;

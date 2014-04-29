@@ -64,7 +64,6 @@ $__num_of_heights: ($__max_height - $__min_height) / $__height_interval;
 	}
 
 
-
 	@include e(item) {
 		@include fill();
 		background-position: center center;
