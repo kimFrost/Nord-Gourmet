@@ -8,10 +8,10 @@ block append content
 
 	section.container
 		div.container__inner
-			div.splash.splash--height700(data-ng-controller="SplashCtrl", data-imgsrc="img/content/1200x700/06Jonas-Fotografi.jpg")
+			div.splash.splash--height700(data-ng-controller="SplashCtrl", data-imgsrc="/img/content/1200x700/06Jonas-Fotografi.jpg")
 				div.splash__text
 					span.fontsize.fontsize--kappa Om nord
-				div.splash__item(style="background-image:url(img/content/1200x700/06Jonas-Fotografi.jpg)", data-ng-style="data.itemCss")
+				div.splash__item(style="background-image:url(/img/content/1200x700/06Jonas-Fotografi.jpg)", data-ng-style="data.itemCss")
 
 	section.container
 		div.container__inner
@@ -24,8 +24,8 @@ block append content
 				div.pane(data-ng-controller="PaneCtrl")
 					div.pane__nav
 						div.pane__link(data-ng-click="switchPane(1, '')", data-ng-class="{'pane__link--active': checkActive(1)}") Velkommen til NORD
-						div.pane__link(data-ng-click="switchPane(2, 'img/content/1200x700/fotoKOKbjerg.JPG')", data-ng-class="{'pane__link--active': checkActive(2)}") Nye behov
-						div.pane__link(data-ng-click="switchPane(3, 'img/content/1200x700/_MG_6913.jpg')", data-ng-class="{'pane__link--active': checkActive(3)}") Nordisk tapas
+						div.pane__link(data-ng-click="switchPane(2, '/img/content/1200x700/fotoKOKbjerg.JPG')", data-ng-class="{'pane__link--active': checkActive(2)}") Nye behov
+						div.pane__link(data-ng-click="switchPane(3, '/img/content/1200x700/_MG_6913_justeret.jpg')", data-ng-class="{'pane__link--active': checkActive(3)}") Nordisk tapas
 					div.pane__container
 						div.pane__item(data-ng-class="{'pane__item--active': checkActive(1)}")
 							div.grid.grid--12.grid--spaceright
@@ -53,4 +53,4 @@ block append content
 								br
 								| Se mere under
 								| &nbsp
-								a(href="menu.html") menu
+								a(href="/menu.html") menu

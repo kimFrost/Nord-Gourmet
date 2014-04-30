@@ -128,7 +128,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	// Default task.
-	grunt.registerTask('default', ['concat', 'copy', 'compass', 'cssmin', 'jade']);
+	grunt.registerTask('default', ['concat', 'copy', 'compass', 'cssmin', 'jade', 'uglify']);
 	grunt.registerTask('dev', ['concat', 'copy', 'compass', 'jade', 'watch']);
 	grunt.registerTask('renderview', ['jade']);
 };

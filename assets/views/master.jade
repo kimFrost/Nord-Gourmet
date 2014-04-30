@@ -5,9 +5,9 @@ html(data-ng-app="Nordgourmet")
 		meta(charset="UTF-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		link(rel='stylesheet', href='http://fast.fonts.net/cssapi/1e457648-3309-409a-bd99-0042ef6cab84.css')
-		link(rel='stylesheet', href='css/nordgourmet.css')
+		link(rel='stylesheet', href='/css/nordgourmet.min.css')
 		// Main app js
-		script(src='scripts/head.js')
+		script(src='/scripts/head.min.js')
 		block head
 	body
 		block body
@@ -16,7 +16,7 @@ html(data-ng-app="Nordgourmet")
 
 
 			header.logo
-				img(src="img/logo.png", alt="Nord Gourmet")
+				img(src="/img/logo.png", alt="Nord Gourmet")
 
 			block content
 
@@ -39,4 +39,4 @@ html(data-ng-app="Nordgourmet")
 							a.icon.icon--foursquare(href="https://foursquare.com/v/nord-urban-gourmet-food-kolding-south-denmark/532ac6df498e33b6e705292e", target="_blank", title="Foursquare")
 
 
-		script(src='scripts/nordgourmet.js')
+		script(src='/scripts/nordgourmet.min.js')

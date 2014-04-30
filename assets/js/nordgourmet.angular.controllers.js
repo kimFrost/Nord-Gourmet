@@ -52,7 +52,7 @@
 		/* Scope Functions
 		===========================*/
 		$scope.switchPane = function(id, imgSrc) {
-			Nordgourmet.log(id);
+			//Nordgourmet.log(id);
 			if (id != undefined) {
 				$scope.data.activepane = id;
 			}
