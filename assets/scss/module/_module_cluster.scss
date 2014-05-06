@@ -1,5 +1,7 @@
 
 
+
+
 // For standard settings
 $cluster_item_per_line: 4;
 $cluster_item_spacing: 20px;
@@ -16,6 +18,8 @@ $cluster_max_item_height: 150px;
 $cluster_item_height_cal_interval: 25px;
 $cluster_num_of_heigths: ($cluster_max_item_height - $cluster_min_item_height) / $cluster_item_height_cal_interval;
 
+
+
 .cluster {
     display: block;
 	&,
@@ -30,6 +34,9 @@ $cluster_num_of_heigths: ($cluster_max_item_height - $cluster_min_item_height) /
 		content: "";
 		display: block;
 		clear: both;
+	}
+	&.cluster--test {
+		background-color: red;
 	}
 	.cluster__list {
 		display: block;

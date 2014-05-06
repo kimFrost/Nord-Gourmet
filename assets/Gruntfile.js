@@ -127,8 +127,10 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-jade');
+	grunt.loadNpmTasks('grunt-cactuspilot');
 	// Default task.
 	grunt.registerTask('default', ['concat', 'copy', 'compass', 'cssmin', 'jade', 'uglify']);
 	grunt.registerTask('dev', ['concat', 'copy', 'compass', 'jade', 'watch']);
 	grunt.registerTask('renderview', ['jade']);
+	grunt.registerTask('mee', ['cactuspilot']);
 };
