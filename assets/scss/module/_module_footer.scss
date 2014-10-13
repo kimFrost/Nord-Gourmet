@@ -31,10 +31,12 @@ $_blockName: 'footer';
 			padding-left: 20px;
 			padding-right: 20px;
 			padding-bottom: 10px;
-			line-height: normal;
+			//line-height: normal;
+			line-height: 21px;
 		}
 		@include mediaQueries(tablet){
 			padding-bottom: 10px;
+			line-height: 21px;
 		}
 	}
 	@include e(right) {
@@ -67,6 +69,10 @@ $_blockName: 'footer';
 			-ms-flex-pack: center;
 			-webkit-justify-content: center;
 			justify-content: center;
+
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
 		};
 		@include mediaQueries(mobile){
 			clear: both;
@@ -92,6 +98,11 @@ $_blockName: 'footer';
 			-ms-flex-pack: center;
 			-webkit-justify-content: center;
 			justify-content: center;
+
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+
 		};
 	}
 }
